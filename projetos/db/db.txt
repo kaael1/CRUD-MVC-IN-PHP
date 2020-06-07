@@ -1,0 +1,16 @@
+create database projeto3b2;
+use projeto3b2;
+
+create table projeto(
+id int not null auto_increment primary key,
+nome varchar(200) not null,
+duracao datetime not null
+);
+-- --------------------------------------------------------
+
+--
+-- Structure for view `ver_projeto`
+--
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ver_projeto`  
+AS  select `projeto`.`id` AS `id`,`projeto`.`nome` AS `nome`,`projeto`.`duracao` AS `duracao`,date_format(`projeto`.`duracao`,'%d/%m/%Y') AS `duracao_dmY` from `projeto` ;
